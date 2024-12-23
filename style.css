@@ -1,0 +1,176 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6E7F4D, #3E5C2E); /* Olive green gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container styling */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 85%;
+    max-width: 700px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+/* Header styling (with fancy font) */
+h1.title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif;
+    color: #5C4A3A; /* Dark earthy brown */
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Input fields with sleek design */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    border: 2px solid #c1d3b5;
+    background-color: #F4F7F1; /* Soft light beige */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #6E7F4D; /* Olive green */
+    box-shadow: 0 0 10px rgba(110, 127, 77, 0.6); /* Olive green shadow on focus */
+}
+
+/* Button styling */
+button {
+    background-color: #6E7F4D; /* Olive green */
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #4B5B36; /* Darker green */
+    transform: scale(1.1); /* Slight scale effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Notes List Styling */
+.notes-list {
+    margin-top: 40px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Note item */
+.note-item {
+    background-color: #E1E8D1; /* Soft greenish beige */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect on notes */
+.note-item:hover {
+    transform: translateY(-5px);
+    background-color: #C9D6B7; /* Slightly darker greenish beige */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Note title styling */
+.note-item h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #5C4A3A; /* Dark earthy brown */
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.note-item h3:hover {
+    color: #6E7F4D; /* Olive green */
+    text-decoration: underline;
+}
+
+/* Hidden content with smooth transition */
+.note-content {
+    display: none;
+    font-size: 1.1rem;
+    color: #4C3B2B; /* Dark brown */
+    margin-top: 10px;
+    background-color: #F5F8F0; /* Light beige */
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Icon button to delete note */
+button.delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button.delete:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 30px;
+    }
+    h1.title {
+        font-size: 2rem;
+    }
+    input[type="text"], textarea, button {
+        font-size: 1rem;
+    }
+}
