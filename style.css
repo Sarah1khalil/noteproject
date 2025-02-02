@@ -1,3 +1,19 @@
+/* Define CSS variables */
+:root {
+    --primary-color: #7A4DFF;  /* Purple */
+    --secondary-color: #FFD700; /* Yellow */
+    --background-color: #F9F2F2; /* Soft light pink */
+    --hover-color: #5B2D9C; /* Darker purple */
+    --text-color: #5A2D91; /* Purple */
+    --button-background: #7A4DFF;
+    --delete-button-background: #FF5733; /* Bright red */
+    --note-background: #F9E5FF; /* Soft purple */
+    --note-hover-background: #E0B3FF; /* Slightly darker purple */
+    --note-text-color: #6A3D91; /* Dark purple */
+    --note-content-background: #F1E2FF; /* Light purple */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
 /* Basic reset */
 * {
     margin: 0;
@@ -7,8 +23,9 @@
 
 /* Body styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6E7F4D, #3E5C2E); /* Olive green gradient */
+    font-family: 'Cookie', sans-serif;
+    font-size: x-large;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Gradient with variables */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +38,7 @@ body {
     background-color: #fff;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px var(--shadow-color); /* Shadow using variable */
     width: 85%;
     max-width: 700px;
     text-align: center;
@@ -33,8 +50,8 @@ body {
 h1.title {
     font-size: 3rem;
     margin-bottom: 30px;
-    font-family: 'Georgia', serif;
-    color: #5C4A3A; /* Dark earthy brown */
+    font-family: 'Gorgia', serif;
+    color: var(--text-color); /* Purple */
     letter-spacing: 1.5px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -45,22 +62,22 @@ input[type="text"], textarea {
     padding: 15px;
     font-size: 1.2rem;
     border-radius: 15px;
-    border: 2px solid #c1d3b5;
-    background-color: #F4F7F1; /* Soft light beige */
+    border: 2px solid var(--secondary-color); /* Yellow border */
+    background-color: var(--background-color); /* Soft light pinkish background */
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px var(--shadow-color); /* Soft shadow */
     transition: all 0.3s ease-in-out;
 }
-
+/* this idea from chat gpt */
 input[type="text"]:focus, textarea:focus {
     outline: none;
-    border-color: #6E7F4D; /* Olive green */
-    box-shadow: 0 0 10px rgba(110, 127, 77, 0.6); /* Olive green shadow on focus */
+    border-color: var(--primary-color); /* Purple */
+    box-shadow: 0 0 10px rgba(122, 77, 255, 0.6); /* Purple shadow on focus */
 }
 
 /* Button styling */
 button {
-    background-color: #6E7F4D; /* Olive green */
+    background-color: var(--button-background); /* Purple */
     color: white;
     padding: 15px 25px;
     font-size: 1.1rem;
@@ -69,11 +86,11 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px var(--shadow-color); /* Soft shadow */
 }
 
 button:hover {
-    background-color: #4B5B36; /* Darker green */
+    background-color: var(--hover-color); /* Darker purple */
     transform: scale(1.1); /* Slight scale effect */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
@@ -90,10 +107,10 @@ button:hover {
 
 /* Note item */
 .note-item {
-    background-color: #E1E8D1; /* Soft greenish beige */
+    background-color: var(--note-background); /* Soft purple */
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px var(--shadow-color); /* Soft shadow */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +123,7 @@ button:hover {
 /* Hover effect on notes */
 .note-item:hover {
     transform: translateY(-5px);
-    background-color: #C9D6B7; /* Slightly darker greenish beige */
+    background-color: var(--note-hover-background); /* Slightly darker purple */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -114,7 +131,7 @@ button:hover {
 .note-item h3 {
     font-size: 1.6rem;
     font-weight: bold;
-    color: #5C4A3A; /* Dark earthy brown */
+    color: var(--text-color); /* Purple */
     cursor: pointer;
     margin-bottom: 10px;
     text-transform: capitalize;
@@ -123,7 +140,7 @@ button:hover {
 }
 
 .note-item h3:hover {
-    color: #6E7F4D; /* Olive green */
+    color: var(--secondary-color); /* Yellow */
     text-decoration: underline;
 }
 
@@ -131,13 +148,13 @@ button:hover {
 .note-content {
     display: none;
     font-size: 1.1rem;
-    color: #4C3B2B; /* Dark brown */
+    color: var(--note-text-color); /* Dark purple */
     margin-top: 10px;
-    background-color: #F5F8F0; /* Light beige */
+    background-color: var(--note-content-background); /* Light purple */
     border-radius: 8px;
     padding: 10px 15px;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px var(--shadow-color); /* Soft shadow */
     transition: all 0.3s ease;
 }
 
@@ -146,18 +163,18 @@ button.delete {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #f44336;
+    background-color: var(--delete-button-background); /* Bright red */
     color: white;
     padding: 10px 15px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px var(--shadow-color); /* Soft shadow */
 }
 
 button.delete:hover {
-    background-color: #d32f2f;
+    background-color: #D43F1A; /* Darker red */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 

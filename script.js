@@ -37,7 +37,7 @@ function loadNotes() {
     });
 }
 
-// Toggle visibility of note content
+// Toggle visibility of note content(from chat gpt)
 function toggleContent(noteItem) {
     const content = noteItem.querySelector(".note-content");
     content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
@@ -47,7 +47,7 @@ function toggleContent(noteItem) {
 function addNote() {
     const title = noteTitle.value.trim();
     const content = noteContent.value.trim();
-
+// help of chat gpt 
     if (title && content) {
         const notes = JSON.parse(localStorage.getItem("notes")) || [];
         notes.push({ title, content });
